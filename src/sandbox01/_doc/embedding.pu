@@ -1,0 +1,8 @@
+@startuml Embedding
+
+
+class Embedding {
+    
+}
+
+@enduml
