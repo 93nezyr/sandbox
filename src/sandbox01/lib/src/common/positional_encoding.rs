@@ -18,7 +18,7 @@ impl PositionalEncoding {
     /// ## Detail
     ///
     /// コンストラクタ時に、位置埋め込みベクトルを作成します.
-    pub fn new(pos_max: i64, d_model: i64) -> Self {
+    pub fn new(pos_max: i64, d_model: i64, device: tch::Device) -> Self {
         let mut positional_encoding = vec![];
         for i in 0..pos_max {
             // (d_model)
@@ -26,7 +26,7 @@ impl PositionalEncoding {
             positional_encoding.push(pos_tensor);
         }
         // (pos_max, d_model)
-        let positional_encoding = Tensor::stack(&positional_encoding, 0);
+        let positional_encoding = Tensor::stack(&positional_encoding, 0).to_kind(tch::Kind::Float).to_device(device);
 
         Self { positional_encoding }
     }
@@ -67,6 +67,6 @@ impl PositionalEncoding {
                 x.push(w.cos());
             }
         }
-        Tensor::of_slice(x.as_slice())
+        Tensor::of_slice(x.as_slice()).to_kind(tch::Kind::Float)
     }
 }

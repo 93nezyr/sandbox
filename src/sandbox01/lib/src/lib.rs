@@ -1,6 +1,9 @@
 mod pmodel;
 mod common;
 
+pub use common::{positional_encoding::PositionalEncoding, transformer::TransformerEncoder};
+pub use common::readout;
+
 #[cfg(test)]
 mod tests {
     // use super::*;
