@@ -12,13 +12,13 @@ use tch::{Device, Tensor};
 /// n_features次元方向の情報は、グループ畳み込みを行うので、互いに独立して扱われます.
 ///
 /// n_tokens次元方向は、時系列に並んだ情報であることを想定しています.
-pub struct ReadoutTokenGroupingCNN1D {
+pub struct ReadoutTokenGroupingResCNN1D {
     device: Device,
 
     cnns: Vec<Conv1D>,
 }
 
-impl ReadoutTokenGroupingCNN1D {
+impl ReadoutTokenGroupingResCNN1D {
     /// # About
     ///
     /// コンストラクタです.
@@ -50,7 +50,7 @@ impl ReadoutTokenGroupingCNN1D {
             cnns.push(cnn);
         }
 
-        ReadoutTokenGroupingCNN1D { device, cnns }
+        ReadoutTokenGroupingResCNN1D { device, cnns }
     }
 
     /// # About
@@ -98,7 +98,7 @@ mod tests {
         );
         println!("in_tensor: {:?}", in_tensor.size());
 
-        let readout1 = ReadoutTokenGroupingCNN1D::new(p, tch::Device::Cpu, n_tokens, n_features_in);
+        let readout1 = ReadoutTokenGroupingResCNN1D::new(p, tch::Device::Cpu, n_tokens, n_features_in);
         let out_tensor = readout1.forward_t(&in_tensor, true);
         println!("out_tensor: {:?}", out_tensor.size());
     }
