@@ -1,3 +1,5 @@
+//! [ReadoutTokenGroupingCNN1D](super::readout1::ReadoutTokenGroupingCNN1D)と似た設計方針で、ResNetのような構造を持つReadoutです.
+
 use tch::nn::{conv1d, Conv1D, ConvConfig, ModuleT};
 use tch::{Device, Tensor};
 
@@ -69,7 +71,7 @@ impl ReadoutTokenGroupingResCNN1D {
         // Conv1Dにとって、n_tokensが画素数に対応する.
         let mut x = x.transpose(1, 2).to_kind(tch::Kind::Float).to_device(self.device);
         for cnn in self.cnns.iter() {
-            x = cnn.forward_t(&x, train).leaky_relu();
+            x = cnn.forward_t(&x, train);
         }
         // self.cnns通過後は、(batch_size, n_features_in, 1)になっている.
         // (batch_size, 1, n_features_in)に変換.
@@ -77,6 +79,14 @@ impl ReadoutTokenGroupingResCNN1D {
         // squeezeして、(batch_size, n_features_in)に変換.
         x.squeeze().to_kind(tch::Kind::Float).to_device(self.device)
     }
+}
+
+struct ResNetCNN1D {
+    device: Device,
+}
+
+impl ResNetCNN1D {
+    
 }
 
 #[cfg(test)]

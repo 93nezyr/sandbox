@@ -1,22 +1,22 @@
-<mxfile host="app.diagrams.net" modified="2024-02-07T18:04:23.125Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0" etag="unE-pXBtPrgJQxcBWuIO" version="23.1.1" type="device">
-  <diagram name="ページ1" id="SB7bkGGk24syO48DbrmC">
-    <mxGraphModel dx="1434" dy="764" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="fUPXE-vMeY1TyGaxZ_fk-1" value="&lt;div&gt;Input&lt;/div&gt;&lt;div&gt;(batch_size, n_tokens, dim_token)&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="195" y="30" width="300" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="fUPXE-vMeY1TyGaxZ_fk-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fUPXE-vMeY1TyGaxZ_fk-1" target="fUPXE-vMeY1TyGaxZ_fk-4">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="570" y="330" as="sourcePoint" />
-            <mxPoint x="210" y="170" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="fUPXE-vMeY1TyGaxZ_fk-4" value="&lt;div&gt;Embedding Layer&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="30" y="120" width="630" height="160" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e">
+    <diagram name="ページ1" id="SB7bkGGk24syO48DbrmC">
+        <mxGraphModel dx="927" dy="484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="fUPXE-vMeY1TyGaxZ_fk-1" value="&lt;div&gt;Input&lt;/div&gt;&lt;div&gt;(batch_size, n_tokens, dim_token)&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="195" y="30" width="300" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="fUPXE-vMeY1TyGaxZ_fk-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fUPXE-vMeY1TyGaxZ_fk-1" target="fUPXE-vMeY1TyGaxZ_fk-4" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="570" y="330" as="sourcePoint"/>
+                        <mxPoint x="210" y="170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="fUPXE-vMeY1TyGaxZ_fk-4" value="&lt;div&gt;Embedding Layer&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="120" width="630" height="160" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>
