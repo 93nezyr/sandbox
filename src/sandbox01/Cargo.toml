@@ -3,4 +3,5 @@
 members = [
     "bin",
     "lib",
+    "nlp_lib",
 ]
