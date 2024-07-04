@@ -1,0 +1,68 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+    {
+        "key": "ctrl+shift+f5",
+        "command": "workbench.action.reloadWindow"
+    },
+    {
+        "key": "tab",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "shift+tab",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "hideSuggestWidget",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "shift+enter",
+        "command": "acceptSelectedSuggestion",
+        "when": "acceptSuggestionOnEnter && editorTextFocus && suggestWidgetVisible && suggestionMakesTextEdit"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocussed && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "ctrl+d d",
+        "command": "type",
+        "args": {"text": "<!-- markdownlint-disable -->"},
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+d e",
+        "command": "type",
+        "args": {"text": "<!-- markdownlint-enable -->"},
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+enter",
+        "command": "markdown-preview-enhanced.runCodeChunk",
+        "when": "editorLangId == 'markdown'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-markdown-preview-enhanced.runCodeChunk",
+        "when": "editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+alt+enter",
+        "command": "markdown-preview-enhanced.runAllCodeChunk",
+        "when": "editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+shift+enter",
+        "command": "-markdown-preview-enhanced.runAllCodeChunk",
+        "when": "editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "workbench.action.duplicateWorkspaceInNewWindow"
+    }
+]
