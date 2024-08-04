@@ -64,5 +64,15 @@
     {
         "key": "ctrl+alt+n",
         "command": "workbench.action.duplicateWorkspaceInNewWindow"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "latex-workshop.view",
+        "when": "!config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /^latex$|^latex-expl3$|^doctex$|^rsweave$|^jlweave$|^pweave$/"
+    },
+    {
+        "key": "ctrl+alt+v",
+        "command": "-latex-workshop.view",
+        "when": "!config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /^latex$|^latex-expl3$|^doctex$|^rsweave$|^jlweave$|^pweave$/"
     }
 ]
