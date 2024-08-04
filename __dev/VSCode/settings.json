@@ -216,17 +216,20 @@
         // スニペット補完中にも補完を使えるようにする
         "editor.suggest.snippetsPreventQuickSuggestions": false,
         // インデント幅を2にする
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
     },
     "[latex]": {
         // スニペット補完中にも補完を使えるようにする
         "editor.suggest.snippetsPreventQuickSuggestions": false,
         // インデント幅を2にする
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
     },
     "[bibtex]": {
         // インデント幅を2にする
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
     },
     // 使用パッケージのコマンドや環境の補完を有効化
     "latex-workshop.intellisense.package.enabled": true,
