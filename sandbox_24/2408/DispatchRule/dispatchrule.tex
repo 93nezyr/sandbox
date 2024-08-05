@@ -1,0 +1,32 @@
+\documentclass{ltjsarticle}
+\usepackage{enumitem}
+
+\begin{document}
+
+\title{Dispatch Rule for JSP}
+\author{93nezyr}
+\maketitle
+
+\section{調査・提案手法}
+
+調査中に登場した、ディスパッチルールに関する一般的な概念の定義.
+
+\begin{description}[style=multiline, leftmargin=10em]
+  \item[$SlackTime$] $SlackTime = DueDate - CurrentTime - WorkRemained$で定義される値.
+  \item[$P_j$] ジョブ$j$の処理時間
+\end{description}
+
+一般的に使われるディスパッチルールのうち、未だ実験に使用されていないのは以下.
+
+\begin{enumerate}
+  \item Longest Processing Time \\
+        最も処理時間の長いジョブを優先してスケジュールする.
+  \item Most Work Remaining \\
+        残り作業量が最も多いジョブを優先してスケジュールする.
+  \item Least Work Remaining \\
+        残り作業量が最も少ないジョブを優先してスケジュールする.
+\end{enumerate}
+
+
+
+\end{document}

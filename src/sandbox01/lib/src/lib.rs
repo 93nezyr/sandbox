@@ -16,3 +16,16 @@ mod tests {
         t.print();
     }
 }
+
+#[cfg(test)]
+#[allow(dead_code)]
+mod sandbox {
+    #[test]
+    fn sandbox1() {
+        println!("hoge");
+        let mut v = vec![];
+        for i in 0..100 {
+            v.push(i);
+        }
+    }
+}
