@@ -72,7 +72,7 @@
             "args": [
                 "-f",
                 "-gg",
-                "-pv",
+                // "-pv",
                 "-lualatex",
                 "-synctex=1",
                 "-interaction=nonstopmode",
