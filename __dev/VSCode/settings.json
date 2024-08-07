@@ -236,4 +236,12 @@
     // 作成したファイルを、直下の "out" フォルダへ出力
     "latex-workshop.latex.outDir": "out",
     // ------------------Latexの設定終了-------------------
+
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "latex": false,
+    },
 }
