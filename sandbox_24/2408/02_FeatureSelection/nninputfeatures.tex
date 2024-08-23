@@ -1,0 +1,37 @@
+\documentclass{ltjsarticle}
+\usepackage{enumitem}
+\usepackage{url}
+
+\begin{document}
+
+\title{Neural Network Input Features}
+\author{93nezyr}
+\maketitle
+
+\section{入力特長量生成}
+
+ジョブショップスケジューリング問題(JSSP)における、特長量選択方法について議論する。今回のJSSPは、ガントチャートで表現されるものとする。ガントチャートの行方向をJSSPにおけるリソース(マシン)、列方向をスケジューリングの時刻とすると、JSSPの状態には以下の変数が含まれる。
+
+\begin{description}[style=multiline, leftmargin=10em]
+  \item[$t$] スケジューリング中の現在時刻
+  \item[$R$] リソースの集合
+  \item[$R_i \in R$] リソース$i$
+  \item[$J$] ジョブの集合
+  \item[$J_j \in J$] ジョブ$j$
+  \item[$O_m$] オペレーション$m$
+  \item[$ON_{j}$] ジョブ$j$に含まれるオペレーション数
+  \item[$OAR_{jm} = \{r \in R\}$] ジョブ$j$のオペレーション$m$が利用可能なリソースの集合
+  \item[$PT_{ijm}$] ジョブ$j$のオペレーション$m$がリソース$i$で実行される場合の処理時間
+  \item[$OR_{jm} \in R$] ジョブ$j$のオペレーション$m$が割り当てられているリソース
+\end{description}
+
+今回議論する問題では、必ず$|OAR_{jm}| = 1$(各ジョブの各オペレーションが実行されるリソースは事前に決まっている)とする。
+
+\begin{thebibliography}{99}
+  \bibitem{chandrashekar2014} chandrashekar2014 \\
+  \url{https://www.sciencedirect.com/science/article/abs/pii/S0045790613003066}
+
+  \bibitem{citekey}
+\end{thebibliography}
+
+\end{document}
