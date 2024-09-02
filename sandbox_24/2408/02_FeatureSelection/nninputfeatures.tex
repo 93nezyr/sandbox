@@ -1,6 +1,8 @@
-\documentclass{ltjsarticle}
+\documentclass[twocolumn, a4j]{ltjsarticle}
 \usepackage{enumitem}
 \usepackage{url}
+
+\setlength{\columnseprule}{0.1pt}
 
 \begin{document}
 
@@ -8,9 +10,9 @@
 \author{93nezyr}
 \maketitle
 
-\section{入力特長量生成・抽出}
+\section{入力特徴量生成・抽出}
 
-ジョブショップスケジューリング問題(JSSP)における、特長量選択方法について議論する。今回のJSSPは、ガントチャートで表現されるものとする。ガントチャートの行方向をJSSPにおけるリソース(マシン)、列方向をスケジューリングの時刻とすると、JSSPの状態には以下の変数が含まれる。
+ジョブショップスケジューリング問題(JSSP)における、特徴量選択方法について議論する。今回のJSSPは、ガントチャートで表現されるものとする。ガントチャートの行方向をJSSPにおけるリソース(マシン)、列方向をスケジューリングの時刻とすると、JSSPの状態には以下の変数が含まれる。
 
 \begin{description}[style=multiline, leftmargin=10em]
   \item[$t$] スケジューリング中の現在時刻
@@ -27,11 +29,46 @@
 
 今回議論する問題では、必ず$OAR_{jm}$は一意に決まっており、各ジョブの各オペレーションが実行されるリソースは事前に決まっているとする。
 
+\cite{shuluo2020}では、下記の要素が状態から得られる特徴量として挙げられていた。
+
+\begin{description}[style=multiline, leftmargin=10em]
+  \item[$U_{ave}$] マシン$k$の稼働率を$U_k$としたときの、全マシンの$U_k$の平均値
+  \item[$U_{std}$] 全マシンの$U_k$の標準偏差
+  \item[$CRO_{ave}$] 全ジョブの操作終了数の平均値
+  \item[$CRJ_{ave}$] 全ジョブの操作終了割合の平均値
+  \item[$CRJ_{std}$] 全ジョブの操作終了割合の標準偏差
+\end{description}
+
+\noindent
+残り2つの特徴量は、今回議論したい問題の場合、常に$0$となるので割愛する。
+上記特徴量は、マシン・ジョブの区別がつかない特徴量なので、スケジューリング中の状態の変化に鈍感な箇所が存在する。上記特徴量に加えて以下の特徴量を追加する。
+
+\begin{description}[style=multiline, leftmargin=10em]
+  \item[$Type_{M_m}$] マシンのタイプ$m$
+\end{description}
+
+\begin{description}[style=multiline, leftmargin=15em]
+  \item[$\bar{U_{k}} (Type_{M_k} = Type_{M_m})$] マシンタイプごとの$U_k$の平均値
+  \item[$CPOC_j$] ジョブ$J_j$の終了した操作$PT_{ijm}$の操作時間の合計
+  \item[$CPOR_j$] ジョブ$J_j$の未終了の操作$PT_{ijm}$の操作時間の合計
+\end{description}
+
+上記の特徴量の追加によって、$|R|+|J|\times2$個の特徴量が追加されることになる.
+
+\begin{equation}
+  f(x) = \left\{
+    \begin{array}{ll}
+    1 & (x \geq 0)\\
+    0 & (x < 0)
+    \end{array}
+    \right.
+\end{equation}
+
 \begin{thebibliography}{99}
   \bibitem{chandrashekar2014} chandrashekar2014 \\
   \url{https://www.sciencedirect.com/science/article/abs/pii/S0045790613003066}
 
-  \bibitem{citekey}
+  \bibitem{shuluo2020} shuluo2020
 \end{thebibliography}
 
 \end{document}
