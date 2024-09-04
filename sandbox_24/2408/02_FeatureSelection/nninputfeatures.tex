@@ -1,9 +1,17 @@
-\documentclass[twocolumn, a4j]{ltjsarticle}
+\documentclass[twocolumn, a4j, 9pt, fleqn]{ltjsarticle}
 \usepackage{enumitem}
 \usepackage{url}
+\usepackage{amsmath}
 \usepackage[margin=10truemm]{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup[figure]{format=plain, labelformat=simple, labelsep=period}
 
 \setlength{\columnseprule}{0.1pt}
+\setlength{\mathindent}{0pt}
+\renewcommand{\baselinestretch}{0.8}
+\renewcommand{\figurename}{Fig}
+\setlength{\textfloatsep}{0pt}
 
 \begin{document}
 
@@ -30,6 +38,9 @@
 
 今回議論する問題では、必ず$OAR_{jm}$は一意に決まっており、各ジョブの各オペレーションが実行されるリソースは事前に決まっているとする。
 
+\vskip\baselineskip
+\subsection[1.2]{ディスパッチルール選択型モデル}
+
 \cite{shuluo2020}では、下記の要素が状態から得られる特徴量として挙げられていた。
 
 \begin{description}[style=multiline, leftmargin=10em]
@@ -54,16 +65,19 @@
   \item[$CPOR_j$] ジョブ$J_j$の未終了の操作$PT_{ijm}$の操作時間の合計
 \end{description}
 
-上記の特徴量の追加によって、$|R|+|J|\times2$個の特徴量が追加されることになる.
+ただし、$CPOC_j$や$CPOR_j$をそのまま状態の特徴量として用いる場合、問題として設定されているジョブ数$|J|$によって特徴量の次元が変わってしまう。特徴量の次元を問題設定が変わっても固定のサイズにするために、以下のような工夫を導入する。
 
-\begin{equation}
-  f(x) = \left\{
-    \begin{array}{ll}
-    1 & (x \geq 0)\\
-    0 & (x < 0)
-    \end{array}
-    \right.
-\end{equation}
+まず、\cite{shuluo2020}のような手法でJSSPを解く場合、ディスパッチルールから得られる解空間に限定されるため、$CPOR_j$は$h_m$と$w_m$をパラメータとして表現できるグラフに限定できる。
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{nninputfeatures01.png}
+  \caption{$J$が全て同じオペレーションで構成されていた場合の$CPOR$グラフ}
+  \label{fig:cpor}
+\end{figure}
+\newpage
+Fig\ref{fig:cpor}のように、全てのジョブの$CPOR_j$を表現することで、解空間がディスパッチルールによって限定されている場合は、$h_m$と$w_m$だけで、全てのジョブの$CPOR_j$を再計算することが可能になる。
+また、スケジュールの短中期的な予測に重要なのは、$h_m$と$w_m$の若い番号で再計算可能なジョブに集中する。そのため、$h_w$と$w_m$をどこまで保持するかの$m$はハイパーパラメータとし、この手法を導入することで、状態から得られる特徴量の次元を固定長とする。
 
 \begin{thebibliography}{99}
   \bibitem{chandrashekar2014} chandrashekar2014 \\
@@ -71,5 +85,31 @@
 
   \bibitem{shuluo2020} shuluo2020
 \end{thebibliography}
+
+\vskip\baselineskip
+\section*{補足}
+
+(1)もしかしてこうやって何か情報を書いて \\
+式(N)に示すとか言うて:
+% \begin{align}
+%   y = f(x)
+% \end{align}
+\begin{flalign}
+  &y = f(x) &
+\end{flalign}
+
+\begin{flalign}
+  &f(x) = \left\{
+    \begin{array}{ll}
+    1 & (x \geq 0)\\
+    0 & (x < 0)
+    \end{array}
+    \right. &
+\end{flalign}
+
+\begin{align}
+  y = &f(x) \\
+  &f(x) = x^2
+\end{align}
 
 \end{document}
