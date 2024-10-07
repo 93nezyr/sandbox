@@ -37,10 +37,14 @@
 \section{DQN-MC loss改善}
 DQN-MCでは、学習時にモデルが収束しない原因として、以下の二つの原因があげられる。NeuralNetwork自身は、与えられたサンプルに対して十分に学習が進んでおり、これ以上lossが下がる能力がない状況を前提とする.
 
+\vskip\baselineskip
+\noindent
 \begin{tcolorbox}[
   colback = white,
   colframe = black,
   fonttitle = \bfseries,
+  % enlarge top by = -1em,
+  % enlarge bottom by = -4em,
   breakable = true]
 \begin{itemize}
   \item $Q(s_t, a_1)$と$Q(s_t, a_2)$の真の期待値が十分近い場合、各NN更新ステップのミニバッチ学習時に、ミニバッチ内のターゲットの分布の偏りによって、NNが学習している$Q(s_t, a_1)$と$Q(s_t, a_2)$の大小関係が逆転することで、生成されるエピソードが変動する.
@@ -66,6 +70,8 @@ DQN-MCでは、学習時にモデルが収束しない原因として、以下�
 本節では、上記の\ref{enum:NNloss}について取り組む.
 
 \subsection{Neural Network Architecture For Decrease loss of ModelX2}
+
+
 
 \part{ModelX3}
 
