@@ -25,17 +25,20 @@
 \renewcommand{\postpartname}{部}
 \renewcommand{\thepart}{\arabic{part}}
 
+% 本文開始
 \begin{document}
 
+% タイトル設定
 \title{Neural Network Loss}
 \author{93 san}
 \maketitle
 
+% 部・節・項・目
 \part{ModelX2}
 本部では、各節で説明される問題を解決したNeuralNetworkを提案する.
 
 \section{DQN-MC loss改善}
-DQN-MCでは、学習時にモデルが収束しない原因として、以下の二つの原因があげられる。NeuralNetwork自身は、与えられたサンプルに対して十分に学習が進んでおり、これ以上lossが下がる能力がない状況を前提とする.
+DQN-MCでは、学習時にモデルが収束しない時に起こっていると考えられる現象として、以下の二つがあげられる。NeuralNetwork自身は、与えられたサンプルに対して十分に学習が進んでおり、これ以上lossが下がる能力がない状況を前提とする.
 
 \vskip\baselineskip
 \noindent
@@ -47,8 +50,8 @@ DQN-MCでは、学習時にモデルが収束しない原因として、以下�
   % enlarge bottom by = -4em,
   breakable = true]
 \begin{itemize}
-  \item $Q(s_t, a_1)$と$Q(s_t, a_2)$の真の期待値が十分近い場合、各NN更新ステップのミニバッチ学習時に、ミニバッチ内のターゲットの分布の偏りによって、NNが学習している$Q(s_t, a_1)$と$Q(s_t, a_2)$の大小関係が逆転することで、生成されるエピソードが変動する.
-  \item NNの精度が十分でない場合、本来十分離れているはずの$Q(s_t, a_1)$と$Q(s_t, a_2)$の真の期待値を十分に予測できず、各NN更新ステップのミニバッチ学習時に、$Q(s_t, a_1)$に対する予測の振動幅と、$Q(s_t, a_2)$に対する予測の振動幅が重なることで、$Q(s_t, a_1)$と$Q(s_t, a_2)$の大小関係が逆転し、生成されるエピソードが変動する.
+  \item $Q(s_t, a_1)$と$Q(s_t, a_2)$の真の期待値が十分近い場合、各NN更新ステップのミニバッチ学習時に、ミニバッチ内のターゲットの分布の偏りによって、NNが学習している$Q(s_t, a_1)$と$Q(s_t, a_2)$の大小関係が逆転することで、生成されるエピソードが変動する.\label{item:r1}
+  \item NNの精度が十分でない場合、本来十分離れているはずの$Q(s_t, a_1)$と$Q(s_t, a_2)$の真の期待値を十分に予測できず、各NN更新ステップのミニバッチ学習時に、$Q(s_t, a_1)$に対する予測の振動幅と、$Q(s_t, a_2)$に対する予測の振動幅が重なることで、$Q(s_t, a_1)$と$Q(s_t, a_2)$の大小関係が逆転し、生成されるエピソードが変動する.\label{item:r2}
 \end{itemize}
 \end{tcolorbox}
 \noindent
@@ -70,8 +73,13 @@ DQN-MCでは、学習時にモデルが収束しない原因として、以下�
 本節では、上記の\ref{enum:NNloss}について取り組む.
 
 \subsection{Neural Network Architecture For Decrease loss of ModelX2}
+本項では、NeuralNetworkの損失低下について取り組む.
 
+\subsubsection{Ensemble Quantile Regression DQN-MC}
+本セクションでは、DQN-MCが期待値を真の目標値として学習することから生じる\ref{item:r1}と、広範で非連続的な状態行動対とターゲットを学習することから生じる\ref{item:r2}を同時に解決する手法を提案する.
 
+まず、NeuralNetworkをQuantile Regressionに変更する.
+加えてNNを$N$個用意する。ミニバッチ取得時に、ターゲットの値をランキング形式に保存するキャッシュを実装し、ターゲットの値が上位$0~1/N \%$に入るものはNN$1$に学習させ、上位$1/N~2/N \%$に入るものはNN$2$に学習させ...というように、各NNに学習させるターゲットの範囲を限定する.
 
 \part{ModelX3}
 
