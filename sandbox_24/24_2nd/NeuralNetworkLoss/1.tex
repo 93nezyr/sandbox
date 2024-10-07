@@ -1,0 +1,72 @@
+% ドキュメントクラスの定義
+\documentclass[twocolumn, a4j, 10pt, fleqn]{ltjsarticle}
+
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage[margin=10truemm]{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+
+% tcolorbox関連
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable, skins, theorems}
+
+\captionsetup[figure]{format=plain, labelformat=simple, labelsep=period}
+
+\setlength{\columnseprule}{0.1pt}
+% \setlength{\mathindent}{0pt}
+\renewcommand{\baselinestretch}{0.8}
+\renewcommand{\figurename}{Fig}
+\setlength{\textfloatsep}{0pt}
+
+% 部名の変更
+\renewcommand{\prepartname}{第}
+\renewcommand{\postpartname}{部}
+\renewcommand{\thepart}{\arabic{part}}
+
+\begin{document}
+
+\title{Neural Network Loss}
+\author{93 san}
+\maketitle
+
+\part{ModelX2}
+本部では、各節で説明される問題を解決したNeuralNetworkを提案する.
+
+\section{DQN-MC loss改善}
+DQN-MCでは、学習時にモデルが収束しない原因として、以下の二つの原因があげられる。NeuralNetwork自身は、与えられたサンプルに対して十分に学習が進んでおり、これ以上lossが下がる能力がない状況を前提とする.
+
+\begin{tcolorbox}[
+  colback = white,
+  colframe = black,
+  fonttitle = \bfseries,
+  breakable = true]
+\begin{itemize}
+  \item $Q(s_t, a_1)$と$Q(s_t, a_2)$の真の期待値が十分近い場合、各NN更新ステップのミニバッチ学習時に、ミニバッチ内のターゲットの分布の偏りによって、NNが学習している$Q(s_t, a_1)$と$Q(s_t, a_2)$の大小関係が逆転することで、生成されるエピソードが変動する.
+  \item NNの精度が十分でない場合、本来十分離れているはずの$Q(s_t, a_1)$と$Q(s_t, a_2)$の真の期待値を十分に予測できず、各NN更新ステップのミニバッチ学習時に、$Q(s_t, a_1)$に対する予測の振動幅と、$Q(s_t, a_2)$に対する予測の振動幅が重なることで、$Q(s_t, a_1)$と$Q(s_t, a_2)$の大小関係が逆転し、生成されるエピソードが変動する.
+\end{itemize}
+\end{tcolorbox}
+\noindent
+*ただし、$ReplayBuffer$内の各$(s, a)$の組に対するターゲットの期待値が変動しない仮定において.\\
+\noindent
+*ここで「収束しない」とは、学習中のモデルがgreedyに行動決定した場合でも、生成されるエピソードが変動することを指す.
+
+\vskip\baselineskip
+上記の原因二つに対して、改善可能と考えられるのは以下である.
+
+\begin{enumerate}
+  \item 報酬関数の変更:\\
+        $Q(s_t, a_1)$と$Q(s_t, a_2)$の期待値の差を広げることで、大小関係の逆転を防ぐ. もしくは、完全に各$(s_t, a_k)$に対して、一意の報酬が与えられるような報酬体系にする(DQN-MCでは不可).
+  \item NNのloss改善:\label{enum:NNloss}\\
+        $Q(s_t, a_1)$と$Q(s_t, a_2)$の期待値が十分に離れていることを前提に、両者の大小関係が逆転しないレベルまでNNのlossを低下させる.
+  \item Backup方法の変更:\\
+        DQN-MC以外のBackup方法に変更することで、期待値を予測するという学習をやめる.
+\end{enumerate}
+本節では、上記の\ref{enum:NNloss}について取り組む.
+
+\subsection{Neural Network Architecture For Decrease loss of ModelX2}
+
+\part{ModelX3}
+
+\end{document}
