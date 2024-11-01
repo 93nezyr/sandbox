@@ -244,4 +244,5 @@
         "scminput": false,
         "latex": false,
     },
+    "hediet.vscode-drawio.theme": "atlas",
 }

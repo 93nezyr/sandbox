@@ -1,0 +1,7 @@
+reward_setting:
+  id: LinearAnnealing
+  config:
+    start_step: 0
+    end_step: 100
+    start_p: 0.0
+    end_p: 1.0
