@@ -18,6 +18,7 @@ Cargo.lock
 /sandbox_24/2407/out/*.pdf
 *.gz
 *.pdf
+*.pyc
 # /sandbox_24/2408/FeatureSelection/*.png
 /sandbox_24/2408/FeatureSelection/out
 /sandbox_24/2408/DispatchRule/_pdf
