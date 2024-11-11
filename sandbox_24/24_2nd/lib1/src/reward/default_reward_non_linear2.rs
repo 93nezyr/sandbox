@@ -5,9 +5,6 @@ pub struct DefaultRewardNonLinear2 {
     /// 変換開始ステップ
     start_step: usize,
 
-    /// 変換終了ステップ
-    end_step: usize,
-
     /// 変換前情報計算用の移動平均幅
     n_move_ave: usize,
 
@@ -15,11 +12,18 @@ pub struct DefaultRewardNonLinear2 {
     /// カウンタ.
     count_opt: usize,
 
-    /// 温度パラメータ.
-    p: f32,
-
-    /// 温度パラメータデルタ.
-    dp: f32,
+    /// 報酬の急峻さを決める定数.
+    /// 
+    /// 大体、変化をとらえたいオーダーの逆数÷10程度の値を設定する.
+    /// 
+    /// 例：0.01オーダーをとらえたい場合
+    /// 
+    /// 1 / 0.01 = 100
+    /// 
+    /// 100 / 10 = 10
+    /// 
+    /// coef = 10
+    coef: f32,
 
     /// リングバッファ.
     r_cache: Vec<f32>,
@@ -29,15 +33,12 @@ pub struct DefaultRewardNonLinear2 {
 }
 
 impl DefaultRewardNonLinear2 {
-    pub fn new(start_step: usize, end_step: usize, start_p: f32, end_p: f32, n_move_ave: usize) -> Self {
-        let dp = (end_p - start_p) / (end_step - start_step) as f32;
+    pub fn new(start_step: usize, coef: f32, n_move_ave: usize) -> Self {
         Self {
             start_step,
-            end_step,
             n_move_ave,
             count_opt: 0,
-            p: start_p,
-            dp,
+            coef,
             r_cache: vec![],
             i_r_cache: 0,
         }
@@ -57,29 +58,13 @@ impl DefaultRewardNonLinear2 {
             // 報酬自体はそのまま返す.
             reward
         }
-        // 変換開始から終了までは、事前情報を固定しながら、温度パラメータを変化させながら変換を行う.
-        else if self.count_opt < self.end_step {
-            // 報酬変換用の情報取得.
-            let bottom = self.get_ave_r_cache();
-            let top = 1.0;
-
-            // 報酬の変換処理.
-            let reward = self.reward_function(reward, bottom, top, self.p);
-            
-            // rewardリターン前に温度パラメータを更新.
-            self.p += self.dp;
-
-            // return
-            reward
-        }
-        // 変換終了以降は、事前情報と温度パラメータ両方を固定して変換を行う.
+        // 変換開始、bottomを固定したまま変換を行う.
         else {
             // 報酬変換用の情報取得.
             let bottom = self.get_ave_r_cache();
-            let top = 1.0;
 
             // 報酬の変換処理.
-            let reward = self.reward_function(reward, bottom, top, self.p);
+            let reward = self.reward_function(reward, bottom);
 
             // 温度パラメータは更新しない.
             // return
@@ -87,14 +72,14 @@ impl DefaultRewardNonLinear2 {
         }
     }
 
-    fn reward_function(&self, reward: Tensor, bottom: f32, _top: f32, _p: f32) -> Tensor {
+    fn reward_function(&self, reward: Tensor, bottom: f32) -> Tensor {
         let device = reward.device();
         let reward_vec = Vec::<f32>::try_from(&reward).expect("failed tensor to vec");
 
         // let beta = 2.0 / bottom;
-        let beta = 100.0;
+        let beta = self.coef;
 
-        println!("reward_vec: {:?}", reward_vec);
+        // println!("reward_vec: {:?}", reward_vec);
 
         let mut r = vec![];
         for x in reward_vec.iter() {
@@ -103,7 +88,7 @@ impl DefaultRewardNonLinear2 {
             r.push(x);
         }
 
-        println!("r: {:?}", r);
+        // println!("r: {:?}", r);
 
         let r = Tensor::of_slice(&r).to_kind(tch::Kind::Float).to_device(device);
         let r = r.tanh() + 1.0;
@@ -142,7 +127,7 @@ mod test {
 
     #[test]
     fn test_reward_func() {
-        let drnl = DefaultRewardNonLinear2::new(0, 0, 3.0, 3.0, 1);
+        let drnl = DefaultRewardNonLinear2::new(0, 100.0, 1);
         // Vec生成.
         let mut r = vec![];
         let start = 0.74;
@@ -155,14 +140,13 @@ mod test {
         println!("r: {:?}", r);
         let r = tch::Tensor::of_slice(&r).to_kind(tch::Kind::Float).to_device(tch::Device::Cpu);
 
-        let r = drnl.reward_function(r, 0.75, 1.0, 3.0);
+        let r = drnl.reward_function(r, 0.75);
         let o_r_vec = Vec::<f32>::try_from(&r).expect("failed tensor to vec");
         println!("o_r_vec: {:?}", o_r_vec);
     }
 
     #[test]
     fn test_tanh_func() {
-        let drnl = DefaultRewardNonLinear2::new(0, 0, 3.0, 3.0, 1);
         // Vec生成.
         let mut r = vec![];
         let start = -10.0;
