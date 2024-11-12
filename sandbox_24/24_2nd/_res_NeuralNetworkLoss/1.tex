@@ -97,9 +97,29 @@ DQN-MCでは、学習時にモデルが収束しない時に起こっている�
   \item 
 \end{enumerate}
 
+\subsubsection{Accuracy Quantile Regression DQN-MC}
+本セクションでは、DQN-MCが期待通りの学習を行えていないことに対する、解決を試みる。
 
-% 加えてNNを$N$個用意する。ミニバッチ取得時に、ターゲットの値をランキング形式に保存するキャッシュを実装し、ターゲットの値が上位$0~1/N \%$に入るものはNN$1$に学習させ、上位$1/N~2/N \%$に入るものはNN$2$に学習させ...というように、各NNに学習させるターゲットの範囲を限定する.
+ここで言う、「期待通りでない学習」とは、以下のような状況を指す.
 
-\part{ModelX3}
+\begin{enumerate}
+  \item 任意の分位点の値が、真の値と異なる.
+        DQN-MCの場合、学習終盤にGreedyな方策でサンプリングし続けている場合、ほとんどサンプルが同じ報酬値を示す. そのような状況でも、各分位点がその値と異なる値を出力している状況.
+  \item 累積分布関数を示すはずの分位点の大小関係が逆転している.
+        1,とも関連するが、こちらに関しては各分位点の値が真の値を示せていなくとも、本来累積分布関数を示すはずの各分位点の大小関係が逆転してしまう現象を指す.
+\end{enumerate}
+
+\noindent
+まず、上記の2,について解決を試みる.
+
+\cite{fzhou}で、分布強化学習における分位点の大小関係の逆転問題について言及されている.
+
+\begin{thebibliography}{99}
+  \bibitem{fzhou}
+  Zhou, Fan, Jianing Wang, and Xingdong Feng. "Non-crossing quantile regression for distributional reinforcement learning." Advances in neural information processing systems 33 (2020): 15909-15919.
+\end{thebibliography}
+
+% 部
+\part{ModelX4}
 
 \end{document}
