@@ -1,6 +1,7 @@
+use lib1::model::_sample;
+
 fn main() {
     println!("Hello, world!");
-
-    let c = lib1::reward::DefaultRewardNonLinear1::new(0, 0, 3.0, 3.0, 1);
+    _sample::sample_code_neural_network_train();
     println!("Goodnight, world!");
 }
