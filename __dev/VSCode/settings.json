@@ -245,4 +245,5 @@
         "latex": false,
     },
     "hediet.vscode-drawio.theme": "atlas",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
 }

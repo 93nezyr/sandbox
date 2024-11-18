@@ -9,5 +9,5 @@ pub trait Model {
 
     fn forward(&mut self, input: Self::Input) -> Self::Output;
 
-    fn backward(&mut self, loss: tch::Tensor) -> f32;
+    fn backward(&mut self, target: tch::Tensor) -> f32;
 }

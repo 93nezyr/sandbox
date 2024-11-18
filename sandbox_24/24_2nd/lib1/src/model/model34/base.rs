@@ -37,11 +37,23 @@ impl Model for Model34 {
         Self { vs, opt }
     }
 
+    /// ## Args
+    /// 
+    /// - `input: Tensor` - [batch_size, dim_obs]のTensor．
+    /// 
+    /// ## Returns
+    /// 
+    /// - `Tensor` - [batch_size, action_space, n_quantile]のTensor．
     fn forward(&mut self, input: Self::Input) -> Self::Output {
         todo!()
     }
 
-    fn backward(&mut self, loss: tch::Tensor) -> f32 {
+    /// ## Args
+    /// 
+    /// - `target: Tensor` - [batch_size, action_space, n_quantile]のTensor．
+    ///   - ただし，`actions_space`はモデル更新時には，`1`になるはず．
+    fn backward(&mut self, target: tch::Tensor) -> f32 {
+        // NC-QR-DQNの損失関数．
         todo!()
     }
 }

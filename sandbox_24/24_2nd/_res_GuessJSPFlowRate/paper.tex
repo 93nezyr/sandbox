@@ -1,0 +1,138 @@
+% ドキュメントクラスの定義
+% \documentclass[twocolumn, a4j, 10pt, fleqn]{ltjsarticle}
+% \documentclass[a4j, 12pt, fleqn]{ltjsarticle}
+\documentclass[a4j, 11pt]{ltjsarticle}
+
+% \usepackage{url}
+\usepackage{amsmath}
+% \usepackage[margin=10truemm]{geometry}
+% \usepackage{graphicx}
+% \usepackage{caption}
+% \usepackage{txfonts}
+% \usepackage{txfontsb}
+% \usepackage{mlmodern}
+\usepackage{luatexja-fontspec}
+
+\usepackage{graphicx}
+
+%Myuse
+\usepackage{enumitem}
+
+% % tcolorbox関連
+% \usepackage{tcolorbox}
+% \tcbuselibrary{breakable, skins, theorems}
+
+% \captionsetup[figure]{format=plain, labelformat=simple, labelsep=period}
+
+% \setlength{\columnseprule}{0.1pt}
+% \setlength{\mathindent}{0pt}
+% \renewcommand{\baselinestretch}{0.8}
+% \renewcommand{\figurename}{Fig}
+% \setlength{\textfloatsep}{0pt}
+\setlength{\oddsidemargin}{0truemm}
+\setlength{\hoffset}{-0.4truemm}
+\setlength{\voffset}{-0.4truemm}
+\setlength{\textheight}{247truemm}
+\setlength{\textwidth}{160truemm}
+\setlength{\headheight}{0truemm}
+\setlength{\topmargin}{0truemm}
+\setlength{\headsep}{0truemm}
+
+\pagestyle{empty}
+
+%Mysettings
+\setmainfont{Times New Roman}
+
+\begin{document}
+
+\renewcommand{\baselinestretch}{1.12}\small\normalsize
+
+\begin{center}
+  % \begin{minipage}[b]{14truemm}
+  %   % \includegraphics[width=1.4truecm]{name}
+  % \end{minipage}
+  \hspace{-10truemm}
+  \begin{minipage}{150truemm}
+    \begin{center}
+      \textbf{\Large Guess Max Job Flow Rate of Job Shop Scheduling Problem with  Turnaround Job considering Material Transfer Time}
+
+      \textbf{\large 材料移動時間を考慮した折り返しジョブ付きジョブショップスケジューリング問題における最大ジョブ流量の予測}
+
+      \textbf{ASsHole$^1$
+      Moxxer Fxxkin Double K$^1$}
+
+      \textbf{E-mail: None}
+    \end{center}
+  \end{minipage}
+\end{center}
+
+\section{背景}
+
+この文献は，位に見合った能力と意識を持たない者の意見を参考に，ジョブショップスケジューリング問題において，計画結果であるガントチャートを生成せずにマシン・ジョブの組み合わせによるスループットを計算する方法を提案する．
+
+\section{ジョブショップスケジューリング問題}
+
+ジョブショップスケジューリング問題(JSP)は、ジョブ$J_j$が保持する$W_j$個の全ての材料に対して、オペレーション$O = \{o_1, o_2, o_3, ..., o_K\}$が割り当てられており、全てのオペレーションをマシン群$M = \{m_1, m_2, m_3, ..., m_I\}$で処理しきると状態遷移終了となる、組み合わせ最適化問題である.
+
+単純なJSPの場合、どの材料のどのオペレーションをどのマシンでどの時刻に処理させるか、という組み合わせ最適化を行うことで、全てのジョブが終了する時刻$makespan$を短くすることを目的とする.
+
+\subsection{材料移動時間を考慮したジョブショップスケジューリング問題}
+
+一方、現実に材料を機械で処理する産業装置等では、材料をマシン$m_s$から$m_t$に移動させるのには時間がかかる．加えて$m_s$から$m_t$への移動はこの二つのマシンだけで完結するものではなく，実際にはマシン間で材料を搬送する別のマシン$m_u$が存在するはずである．そのため，シンプルなJSPで記述されているような「オペレーション$o_k$がマシン$m_i$で処理される」というような記述ではなく，「オペレーション$o_k$はマシン群$\{m_s, m_t, m_u\}$でそれぞれ$\{t_s, t_t, t_u\}$時刻[a.u.]使って処理される」という記述をすることになる．
+
+また，材料移動時間を考慮したJSPでは，前述のマシン$m_s$と$m_t$間を搬送する$m_u$が存在するが，このマシン$m_u$は必ずしも他の全マシン間の搬送を担うことができるとは限らない．そのため，材料移動時間を考慮したJSPでは，各マシン間の材料移動の可否を矢印で示した，双方向の辺を含む有向グラフで表される．この制約によって，各ジョブはオペレーション$o_{k-1}$をどのマシン$m_{i}$で処理したかによって，次のオペレーション$o_k$をどのマシンに割り当てることができるかが決定する．
+
+\subsection{折り返しジョブ付き材料移動ジョブショップスケジューリング問題}
+
+一般的なJSPでは，材料はオペレーション群$O = \{o_1, o_2, o_3, ..., o_K\}$を持ち，重複無くマシン$M = \{m_1, m_2, m_3, ..., m_I\}$に割り当てていくことによって，材料の処理を完了する．例を挙げると，
+\begin{flalign*}
+  & If &\\
+  & O_j = \{o_1, o_2, o_3, o_4\} &\\
+  & M = \{m_1, m_2, m_3, m_4\} &\\
+  & Then &\\
+  & o_1 \Rightarrow m_3 &\\
+  & o_2 \Rightarrow m_1 &\\
+  & o_3 \Rightarrow m_4 &\\
+  & o_4 \Rightarrow m_2 &
+\end{flalign*}
+のように，同じマシンを複数のオペレーションで使用することは無い．
+
+しかし，本文献で取り扱う折り返しジョブの場合，例として以下のようにマシンが使用される．\\
+\noindent
+$Example1$
+\begin{flalign*}
+  & If &\\
+  & O_j = \{o_1, o_2, o_3, o_4\} &\\
+  & M = \{m_1, m_2, m_3, m_4\} &\\
+  & Then &\\
+  & o_1 \Rightarrow m_3 &\\
+  & o_2 \Rightarrow m_1 &\\
+  & o_3 \Rightarrow m_1 &\\
+  & o_4 \Rightarrow m_3 &
+\end{flalign*}
+$Example2$
+\begin{flalign*}
+  & If &\\
+  & O_j = \{o_1, o_2, o_3, o_4, o_5\} &\\
+  & M = \{m_1, m_2, m_3, m_4\} &\\
+  & Then &\\
+  & o_1 \Rightarrow m_3 &\\
+  & o_2 \Rightarrow m_1 &\\
+  & o_3 \Rightarrow m_4 &\\
+  & o_4 \Rightarrow m_2 &\\
+  & o_5 \Rightarrow m_3 &
+\end{flalign*}
+
+$Example1$のように，前半のオペレーションと後半のオペレーションで使用されるマシンが一致することは無い($Example2$)が，材料が処理される際に「始点のマシン・オペレーション」「折り返しのマシン・オペレーション」が存在する．
+
+\begin{description}[style=multiline, leftmargin=10em]
+  \item[Hoge] Hogehoge
+\end{description}
+
+\subsection{マシンの種類}
+
+\section{処理部における流量の予測}
+
+\section{搬送部における流量の予測}
+
+\end{document}
