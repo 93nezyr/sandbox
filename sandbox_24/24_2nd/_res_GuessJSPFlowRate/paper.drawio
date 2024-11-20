@@ -1,0 +1,309 @@
+<mxfile host="65bd71144e">
+    <diagram id="Ya1TQKRHjyxXjagJPPfJ" name="ページ1">
+        <mxGraphModel dx="1119" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="$$LootPosition$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="140" y="10" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="$$PassingPosition$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="10" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="$$ProcessPosition$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="10" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="$$Robot$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="10" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Text" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry y="60" width="800" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="\(LootPosition\)と\(Robot\)と\(Position\)の間に成立し得るグラフ構造は以下．&lt;br&gt;ここで言う\(Position\)は\(PassingPosition\)と\(ProcessPosition\)のいずれであっても良い．&lt;br&gt;（ただし，\(ProcessPosition\)に延長は適用できない．）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry y="120" width="800" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="23" target="24">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="23" target="28">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="23" target="54">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="23" target="60">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="23" target="70">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="$$LootPosition$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="200" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="24" target="74">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="130" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="$$Robot$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="310" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="28" target="75">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="260" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="28" target="79">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="370" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="$$Robot$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="310" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="54" target="78">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="500" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="$$Robot$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="310" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="60" target="78">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="500" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="60" value="$$Robot$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="310" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="単純" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="410" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="分岐" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="410" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="合流" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="410" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="70" target="77">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="70" value="$$Robot$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="310" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="$$Position$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="10" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="$$Position$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="380" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="$$Position$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="380" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" style="edgeStyle=none;html=1;" edge="1" parent="1" source="77" target="81">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="$$Position$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="380" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="$$Position$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="460" y="380" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="$$Position$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="380" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="81" target="82">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="81" value="$$Robot$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="450" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="$$Position$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="520" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="延長" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="560" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="上記グラフ構造の組み合わせのもとに生成されるグラフ\(G\)に対して，同一品種の材料\(N\)個を，任意の\(ProcessPosition\)に向けて流す．&lt;br&gt;この際に，可能な限り早く全ての材料を\(ProcessPosition\)で処理しきる場合，各辺の流量をいくらにすれば良いかを考える．&lt;br&gt;各辺の流量は最小値0で，最大値は\(Position\)・\(Robot\)ごとに決められているとする．&lt;br&gt;各\(ProcessPosition\)で材料が処理される時間\(t_p\)は，材料の品種によって決められているものとする．&lt;br&gt;&lt;br&gt;また，\(Robot\)は互いに排他関係にある．\(Robot_1\)と\(Position_A\)の間の材料流量が\(1\geqq\)の時，他の\(Robot_l\)は\(Position_A\)との間に材料流量を持つことができない．&lt;br&gt;この関係性から，各辺の流量の最大値以外に，辺同士の排他制約を定式化する必要がある．&lt;br&gt;&lt;br&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry y="610" width="800" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="87" target="88">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="87" target="89">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="87" target="90">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="95" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="87" target="91">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="$$LootPosition$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="800" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="$$Robot1$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="880" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="$$Robot2$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="880" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="$$Robot3$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="880" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="$$Robot4$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="880" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="96" target="102">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="cap: 4&lt;br&gt;transtime: 2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="910" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="105" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="97" target="104">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="cap: 4&lt;br&gt;transtime: 4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="910" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="98" target="106">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="cap: 8&lt;br&gt;transtime: 4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="910" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" style="edgeStyle=none;html=1;" edge="1" parent="1" source="99" target="107">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="cap: 2&lt;br&gt;transtime: 0.5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="910" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="102" value="$$4 \div 2 = 2[/sec]$$" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="960" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" value="$$4 \div 4 = 1[/sec]$$" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="960" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="$$8 \div 4 = 2[/sec]$$" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="960" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="$$2 \div 0.5 = 4[/sec]$$" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="960" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="上図のような状況の例を考える．capは各\(Robot\)が持てる最大材料数を表し，transtimeは\(LootPosition\)から次の\(Position\)に材料を運ぶのにかかる時間である．定義から，各\(Robot\)が実現する材料流量は\(cap \div transtime \)で計算できる．&lt;br&gt;上記例で単位時間を\(1min\)とすると，\(LootPositon\)からの出力流量の合計だけを最大化する場合は，常に\(Robot4\)を使い続けて，材料流量\(4 \times 60[sec] = 240[/min]\)を実現するのが最適である．" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry y="1020" width="800" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="115" target="116">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="115" target="117">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="113" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="115" target="118">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="114" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="115" target="119">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="115" value="$$LootPosition$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="360" y="1200" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" value="$$Robot1$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="1280" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" value="$$Robot2$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="1280" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="$$Robot3$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="1280" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" value="$$Robot4$$" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="1280" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="120" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="121" target="128">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="121" value="cap: 4&lt;br&gt;transtime: 2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="1310" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="122" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="123" target="129">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" value="cap: 4&lt;br&gt;transtime: 4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="1310" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="124" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="125" target="130">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="125" value="cap: 8&lt;br&gt;transtime: 4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="1310" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="126" style="edgeStyle=none;html=1;" edge="1" parent="1" source="127" target="131">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="127" value="cap: 2&lt;br&gt;transtime: 0.5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="1310" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="133" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="128" target="132">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="128" value="$$4 \div 2 = 2[/sec]$$" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="1360" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="135" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="129" target="134">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="129" value="$$4 \div 4 = 1[/sec]$$" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="1360" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="137" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="130" target="136">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="130" value="$$8 \div 4 = 2[/sec]$$" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="1360" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="139" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="131" target="138">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="131" value="$$2 \div 0.5 = 4[/sec]$$" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="520" y="1360" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="132" value="$$ProcessPosition1$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="1450" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="134" value="$$ProcessPosition2$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="1450" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" value="$$ProcessPosition3$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="1450" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="$$ProcessPosition4$$" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="1450" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="141" value="材料情報&lt;br&gt;\(t_p = 100[sec]\)" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=0;size=10;position=0.08;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="1120" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="143" value="cap: M1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="1480" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="144" value="cap: M2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="1480" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="145" value="cap: M3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="420" y="1480" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="146" value="cap: M4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="1480" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="147" value="各\(ProcessPositionM\)での材料処理能力は，\(60 \div t_p \times cap = 0.6cap[/min]\)である．&lt;br&gt;&lt;br&gt;各\(ProcessPosition\)の処理能力\(0.6cap[/min]\)が各\(Robot\)の最大流量を下回っている場合で，かつ，" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry y="1520" width="800" height="100" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
